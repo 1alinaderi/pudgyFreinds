@@ -1,0 +1,192 @@
+@mixin mobile {
+    @media screen and (max-width: 47.9375rem) {
+      @content;
+    }
+  }
+  
+  @mixin tablet {
+    @media screen and (min-width:48rem) and (max-width: 61.9375rem) {
+      @content;
+    }
+  }
+  
+  @mixin xldesktop {
+    @media screen and (min-width: 118.75rem) {
+      @content;
+    }
+  }
+  
+  @mixin desktop {
+    @media screen and (min-width: 62rem) {
+      @content;
+    }
+  }
+  
+.start_home_bg{
+    background-image: url("/homebg.png");
+    height: 700px;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include tablet {
+        background-image: none;
+        height: auto;
+    }
+    @include mobile {
+        background-image: none;
+        height: auto;
+    
+    }
+}
+.text_11 {
+    font-size: 14px ;
+    color: #7040F2;
+    letter-spacing: 4px;
+}
+.text_22{
+    font-size: 85px;
+    font-weight: 800;
+    p {
+        font-size: 85px;
+        font-weight: 800;
+        color: #7040F2;
+    }
+    @include mobile {
+        font-size: 40px;
+        p {
+        font-size: 40px;
+        }
+    }
+    @include tablet {
+        font-size: 40px;
+        p {
+        font-size: 40px;
+        }
+    }
+}
+.text_33 {
+    font-size: 17px;
+}
+.text_nft_number{
+    position: absolute;
+    right: 40px;
+    top: 30%;
+    transform: translate(-50%);
+    h1 {
+        color: #7040F2;
+        font-weight: 900;
+    }
+}
+.about_desc{
+    font-size: 19px;
+}
+.map_container {
+    border-left: 1px solid #7040F2;
+}
+.phase{
+    font-weight: 700;
+    font-size: 28px;
+}
+.desc_map{
+    font-size: 18px;
+}
+.map_child{
+    background-image: linear-gradient(90deg, #4690D430 50%, #4690D400 100%);
+    transition: .3s;
+    &:hover {
+        background-image: linear-gradient(90deg, #AE8FFF 0%, #7040F2 100%);
+    }
+}
+.image_fixed_size{
+    width: 100px;
+    height: 100px;
+}
+.list_container{
+    li {
+        font-size: 20px ;
+        font-weight: 700;
+        &::marker {
+            color: #7040F2;
+        }
+        @include mobile{
+            font-size: 16px;
+        }
+    }
+}
+.slider_text {
+    background-image: linear-gradient(90deg, #4690D430 50%, #4690D400 100%);
+    h2 {
+        font-size: 26px;
+        font-weight: 600;
+    }
+   
+    p {
+        color: #7040F2;
+    }
+}
+.slider_hover:hover {
+   
+    .slider_text {
+    
+            background-image: linear-gradient(90deg, #AE8FFF 0%, #7040F2 100%);
+            p {
+            color: #fff;
+            }
+        
+    }
+}
+.slider_hover {
+    img {
+        border-radius: 10px 10px 0px 0;
+    }
+    .slider_text {
+        border-radius: 0 0 10px 10px;
+
+    }
+}
+.title_home{
+    @include mobile {
+        font-size: 25px;
+    }
+}
+.faq_container{
+    p{
+        font-weight: 700;
+        font-size: 17px;
+    }
+    background-color: #4690D430;;
+    transition: .3s;
+    &:hover {
+        background-color: #7040F2;
+        .bbb {
+            color: #fff !important;
+        }
+    }
+}
+.envelope{
+    background-color: #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Twitter{
+    background-color: rgb(30, 134, 214);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Discord{
+    background-color: rgb(78, 69, 178);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

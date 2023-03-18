@@ -1,0 +1,180 @@
+@mixin mobile {
+  @media screen and (max-width: 47.9375rem) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width:48rem) and (max-width: 61.9375rem) {
+    @content;
+  }
+}
+
+@mixin xldesktop {
+  @media screen and (min-width: 118.75rem) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 62rem) {
+    @content;
+  }
+}
+
+
+@mixin all_fonts_styles($font-size, $font-weight, $font-family, $color) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  font-family: $font-family;
+  color: $color;
+}
+@mixin input_container(
+  $background-color,
+  $border,
+  $border-top-left-radius,
+  $border-top-right-radius,
+  $border-bottom-left-radius,
+  $border-bottom-right-radius
+) {
+  background-color: $background-color;
+  border: $border;
+  border-top-right-radius: $border-top-right-radius;
+  border-top-left-radius: $border-top-left-radius;
+  border-bottom-left-radius: $border-bottom-left-radius;
+  border-bottom-right-radius: $border-bottom-right-radius;
+}
+/*----------------------------border mixin----------------------*/
+@mixin border-notch($tl: null, $tr: null, $br: null, $bl: null) {
+  // fix type errors
+  @if ($tl == 0) {
+    $tl: 0px;
+  }
+  @if ($tr == 0) {
+    $tr: 0px;
+  }
+  @if ($br == 0) {
+    $br: 0px;
+  }
+  @if ($bl == 0) {
+    $bl: 0px;
+  }
+
+  @if ($bl == null) {
+    @if ($br == null) {
+      @if ($tr == null) {
+        // all corners
+        clip-path: polygon(
+          #{$tl} 0,
+          calc(100% - #{$tl}) 0,
+          100% #{$tl},
+          100% calc(100% - #{$tl}),
+          calc(100% - #{$tl}) 100%,
+          #{$tl} 100%,
+          0 calc(100% - #{$tl}),
+          0 #{$tl}
+        );
+      } @else {
+        // tl & br, tr & bl
+        clip-path: polygon(
+          #{$tl} 0,
+          calc(100% - #{$tr}) 0,
+          100% #{$tr},
+          100% calc(100% - #{$tl}),
+          calc(100% - #{$tl}) 100%,
+          #{$tr} 100%,
+          0 calc(100% - #{$tr}),
+          0 #{$tl}
+        );
+      }
+    } @else {
+      // tl, tr & bl, br
+      clip-path: polygon(
+        #{$tl} 0,
+        calc(100% - #{$tr}) 0,
+        100% #{$tr},
+        100% calc(100% - #{$br}),
+        calc(100% - #{$br}) 100%,
+        #{$tr} 100%,
+        0 calc(100% - #{$tr}),
+        0 #{$tl}
+      );
+    }
+  } @else {
+    // tl, tr, br, bl
+    clip-path: polygon(
+      #{$tl} 0,
+      calc(100% - #{$tr}) 0,
+      100% #{$tr},
+      100% calc(100% - #{$br}),
+      calc(100% - #{$br}) 100%,
+      #{$bl} 100%,
+      0 calc(100% - #{$bl}),
+      0 #{$tl}
+    );
+  }
+}
+/*----------------pagination mixin---------------------*/
+@mixin pagination($active: null, $odd: null) {
+  @if ($active == 1) {
+    @if ($odd == 1) {
+      border-top: 10px solid rgba(255, 255, 255, 0.705) !important;
+      border-left: 5px solid transparent !important;
+      border-right: 5px solid transparent !important;
+      height: 0 !important;
+      width: 25px !important;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      opacity: 1 !important;
+    } @else {
+      border-top: 10px solid rgba(255, 255, 255, 0.705) !important;
+      border-left: 5px solid transparent !important;
+      border-right: 5px solid transparent !important;
+      height: 0 !important;
+      width: 25px !important;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      opacity: 1 !important;
+      transform: rotate(180deg);
+    }
+  }
+
+  @if ($active == 0) {
+    @if ($odd == 1) {
+      border-top: 10px solid #555 !important;
+      border-left: 5px solid transparent !important;
+      border-right: 5px solid transparent !important;
+      height: 0 !important;
+      width: 25px !important;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      opacity: 1 !important;
+    } @else {
+      border-top: 10px solid #555 !important;
+      border-left: 5px solid transparent !important;
+      border-right: 5px solid transparent !important;
+      height: 0 !important;
+      width: 25px !important;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      opacity: 1 !important;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+@mixin blue_white_button(
+  $background-color: #042b3e,
+  $hover-background: #033c59
+) {
+  background-color: $background-color;
+  position: relative;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: $hover-background;
+  }
+}

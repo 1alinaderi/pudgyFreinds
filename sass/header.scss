@@ -1,0 +1,59 @@
+.header_container{
+    background-color: transparent;
+}
+.btn_home{
+    color: #fff;
+    background-color: #7040F2;
+    border-radius: 5px;
+    border: none;
+    transition: .3s;
+    cursor: pointer;
+    &:hover {
+        background-color: #fff;
+        color: #7040F2 !important;
+        text-decoration: none;
+    }
+}
+.link_container{
+    span {
+        a{
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: .3s;
+            padding: 7px;
+            border-radius: 5px;
+            white-space: nowrap;
+            &:hover {
+                color: #fff;
+                background-color: #6f40f25c;
+            }
+        }
+    }
+
+}
+.logo_mobile{
+    height: 50px;
+    width: 50px;
+}
+.show_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 1500px;
+    background-color: rgba(18,13,36, 1);
+    z-index: 2;
+}
+.text_show {
+    a{
+        color: #7040F2 !important;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 30px;
+    }
+
+ 
+    
+}
