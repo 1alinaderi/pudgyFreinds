@@ -8,8 +8,15 @@
     box-sizing: border-box;
     border: none;
 }
+
 .imp_all {
-    background-color: #020015;
+    background: rgb(84, 170, 255);
+    background: linear-gradient(180deg, rgb(84, 170, 255) 0%, rgb(0, 42, 93) 100%);
     color: #fff;
     font-family: "Dm sans";
+    cursor: url("http://www.rw-designer.com/cursor-extern.php?id=7130") !important;
+}
+
+body {
+    cursor: url("http://www.rw-designer.com/cursor-extern.php?id=7130") !important;
 }

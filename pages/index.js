@@ -7,9 +7,11 @@ import { useState } from 'react'
 import { ToastContainer } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
 
+
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
   const [wallet  ,  setWallet ] = useState();
   return (
     <>
@@ -17,13 +19,14 @@ export default function Home() {
         <title>Pudgy Freinds</title>
         <meta name="description" content="Pudgy Freinds NFT Website" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/logo.png" />
+        <link rel="icon" href="https://cdn.pudgyfriends.io/wp-content/uploads/website/logo.png" />
       </Head>
       <div className='imp_all'>
       <Header wallet={wallet} setWallet={setWallet}/>
        <ToastContainer position="top-center" />
        <HomeCustomerWeb  wallet={wallet} setWallet={setWallet}/>
 
+      
       <Footer/>
       </div>
    

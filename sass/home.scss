@@ -39,8 +39,8 @@
     }
 }
 .text_11 {
-    font-size: 14px ;
-    color: #7040F2;
+    font-size: 17px ;
+    color: #00eaff;
     letter-spacing: 4px;
 }
 .text_22{
@@ -49,7 +49,7 @@
     p {
         font-size: 85px;
         font-weight: 800;
-        color: #7040F2;
+        color: #00eaff;
     }
     @include mobile {
         font-size: 40px;
@@ -73,7 +73,7 @@
     top: 30%;
     transform: translate(-50%);
     h1 {
-        color: #7040F2;
+        color: #00eaff;
         font-weight: 900;
     }
 }
@@ -81,7 +81,7 @@
     font-size: 19px;
 }
 .map_container {
-    border-left: 1px solid #7040F2;
+    border-top: 1px solid #00eaff;
 }
 .phase{
     font-weight: 700;
@@ -91,22 +91,30 @@
     font-size: 18px;
 }
 .map_child{
-    background-image: linear-gradient(90deg, #4690D430 50%, #4690D400 100%);
+    background-image: linear-gradient(180deg, #4690D430 50%, #4690D400 100%);
     transition: .3s;
     &:hover {
-        background-image: linear-gradient(90deg, #AE8FFF 0%, #7040F2 100%);
+        background-image: linear-gradient(180deg, #AE8FFF 0%, #00eaff 100%);
     }
 }
 .image_fixed_size{
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
 }
 .list_container{
+    font-size: 18px ;
+    font-weight: 700;
+    &::marker {
+        color: #00eaff;
+    }
+    @include mobile{
+        font-size: 16px;
+    }
     li {
-        font-size: 20px ;
+        font-size: 18px ;
         font-weight: 700;
         &::marker {
-            color: #7040F2;
+            color: #00eaff;
         }
         @include mobile{
             font-size: 16px;
@@ -121,14 +129,14 @@
     }
    
     p {
-        color: #7040F2;
+        color: #00eaff;
     }
 }
 .slider_hover:hover {
    
     .slider_text {
     
-            background-image: linear-gradient(90deg, #AE8FFF 0%, #7040F2 100%);
+            background-image: linear-gradient(90deg, #AE8FFF 0%, #00eaff 100%);
             p {
             color: #fff;
             }
@@ -157,7 +165,7 @@
     background-color: #4690D430;;
     transition: .3s;
     &:hover {
-        background-color: #7040F2;
+        background-color: #00eaff;
         .bbb {
             color: #fff !important;
         }
@@ -190,3 +198,33 @@
     justify-content: center;
     align-items: center;
 }
+.text_44 {
+    font-size: 50px;
+    color: #00eaff;
+    font-weight: 500;
+    @include mobile{
+    font-size: 30px;
+    } 
+}
+.text_55{
+    font-size: 36px;
+    color: #ffffff;
+    font-weight: 400;
+    font-weight: 500;
+    @include mobile{
+    font-size: 26px;
+
+    } 
+}
+.section {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+  .section span {
+    display: block;
+    transform: translateX(-50px);
+    font-size: 60px ; 
+  }

@@ -4,6 +4,7 @@ import {FaAlignJustify, FaClosedCaptioning, FaSearch, FaWallet, FaWindowClose} f
 import Web3 from "web3";
 import { AbiCollection } from '@/abi/abi'
 import { toast } from 'react-toastify'
+import Link from 'next/link';
 
 const Header = (props) => {
 
@@ -12,8 +13,8 @@ const Header = (props) => {
     const contract = new web3.eth.Contract(AbiCollection , contractAddress);
 
 
-    const {wallet , setWallet } = props 
-    const logo = "/logo.png"
+    const {wallet , setWallet  , setWhite , fromMint , balanceOf , setSuplly} = props 
+    const logo = "https://cdn.pudgyfriends.io/wp-content/uploads/website/logo.png"
     const [show , setShow] = useState();
     const [connect  ,  setConnect ] = useState();
 
@@ -25,13 +26,17 @@ const Header = (props) => {
             { toast.info("you're in whitelist") 
             console.log(accounts[0])
             console.log(e)
+            setWhite(true)
             }else{
             toast.info("you're not in whitelist")
             console.log(accounts[0])
             console.log(e)
+            setWhite(false)
         }
     })
         setWallet(accounts[0])
+        balanceOf();
+        
     }
   
 
@@ -39,39 +44,52 @@ const Header = (props) => {
     <div className='header_container col-12 p-0 m-0'>
         <div className=' col-12 justify-content-center align-items-center px-4 py-3 d-none d-lg-flex' >
         <div className='col-lg-3'>
+            <Link href={"/"}>
             <img className='col-lg-4' src={logo} alt="logo" />
+            </Link>
+           
         </div>
+
         <div className='col-lg-6 d-flex justify-content-around link_container'>
-            <span>
-                <a href='#about'>
-                About Pudgy Friends
-                </a>
-            </span>
-            <span>
-                <a href='#map'>
-                Roadmap
-                </a>
-            </span>
-            <span>
-                <a href='#Utility'>
-                Utility
-                </a>
-            </span>
-            <span>
-                <a href='#team'>
-                OUR TEAM
-                </a>
-            </span>
-            <span>
-                <a href='#faq'>
-            FAQs
-                </a>
-            </span>
+        {!fromMint && (
+            <>
+              <span>
+                 <a href='#about'>
+                 About Pudgy Friends
+                 </a>
+             </span>
+             <span>
+                 <a href='#map'>
+                 Roadmap
+                 </a>
+             </span>
+             <span>
+                 <a href='#Utility'>
+                 Utility
+                 </a>
+             </span>
+             <span>
+                 <a href='#team'>
+                 OUR TEAM
+                 </a>
+             </span>
+             <span>
+                 <a href='#faq'>
+             FAQs
+                 </a>
+             </span>
+            </>
+            )}
+       
         </div>
         <div className='col-lg-3 d-flex justify-content-center'>
-            <button onClick={handleConnect} className='btn_home px-4 py-2'>
-               {wallet ? "Connected" : "Connect Wallet"} 
-            </button>
+            {fromMint && (
+                    <button onClick={handleConnect} className='btn_home px-4 py-2'>
+                    {wallet ? "Connected" : "Connect Wallet"} 
+                 </button>
+            )
+            }
+        
             
         </div>
         </div>
@@ -79,20 +97,28 @@ const Header = (props) => {
             <div>
                 <FaAlignJustify onClick={() => show ? setShow(false) : setShow(true)} size={25}/>
             </div>
-      
+                <Link href={"/"}>
                 <img className='logo_mobile' src={logo} alt="logo" />
+                </Link>
+     
        
             <div>
-                <button onClick={handleConnect} className='btn_home py-1 px-3'>
-                {wallet ? "Connected" : (<p>Connect <br/> Wallet </p>)}   
-                </button>
+                {fromMint && (
+       <button onClick={handleConnect} className='btn_home py-1 px-3'>
+       {wallet ? "Connected" : (<p>Connect <br/> Wallet </p>)}   
+       </button>
+                )}
+         
             </div>
 
         </div>
         {show && (
                 <div onClick={() => show ? setShow(false) : setShow(true)} className='show_container p-3'>
                 <div className='col-12 p-0 m-0 d-flex justify-content-between'>
-                <img className='logo_mobile' src={logo} alt="logo" />
+                    <Link href={"/"}>
+                    <img className='logo_mobile' src={logo} alt="logo" />
+                    </Link>
+            
                 <FaWindowClose onClick={() => show ? setShow(false) : setShow(true)} size={25}/>
                 </div>
                 <div className='text_show pt-4 d-flex flex-column' >

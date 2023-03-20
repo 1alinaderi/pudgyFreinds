@@ -1,16 +1,17 @@
 import React from 'react'
 import { FaDiscord, FaEnvelope, FaTwitter } from 'react-icons/fa'
 
-const Footer = () => {
+const Footer = ({fromFooter}) => {
   return (
-    <div style={{backgroundImage:'linear-gradient(270deg, #7040F2 0%, #AE8FFF 100%)'}} className='col-12 flex-wrap p-0 p-5 d-flex justify-content-center'>
+    <div  className='col-12 flex-wrap p-0 p-5 d-flex justify-content-center'>
       <div className='p-5 d-flex flex-wrap justify-content-center col-lg-10 border-bottom '>
-        <div className=' col-lg-10 p-0 d-flex flex-wrap'>
+        {!fromFooter &&  (
+      <div className=' col-lg-10 p-0 d-flex flex-wrap'>
           <div className='col-lg-4 p-0 d-flex justify-content-center align-items-center flex-column '>
               <div className='envelope'>
                 <FaEnvelope size={23}  color='#7040F2' />
               </div>
-              <p className='pt-3'>pudgyfriends@gmail.com</p>
+              <a href='mailto:pudgyfriends@gmail.com'  className='pt-3 text-white'>pudgyfriends@gmail.com</a>
           </div>
           <div className='col-lg-4 p-0 d-flex justify-content-center align-items-center flex-column '>
             <a className='text-white d-flex justify-content-center flex-wrap flex-column align-items-center' href='https://twitter.com/PudgyFriends'>
@@ -26,11 +27,13 @@ const Footer = () => {
             <div className='Discord'>
                 <FaDiscord size={23} color='#fff' />
               </div>
-              <p className='pt-3'>We are on Twitter <br/> @PudgyFriends</p>
+              <p className='pt-3'>We are on Discord <br/> @PudgyFriends</p>
             </a>
            
           </div>
-        </div>
+        </div> 
+        )} 
+   
 
       </div>
       <div className='p-5 d-flex flex-wrap justify-content-center col-lg-10  '>
