@@ -5,7 +5,7 @@ const Map = () => {
   return (
     <div id='map' className='col-12 py-5 p-0 d-flex justify-content-center align-items-center flex-wrap'>
       <h1 className='title_home w-100 col-lg-9 col-11 pb-5'>Roadmap</h1>
-      <div className='col-lg-9 col-11 d-flex flex-wrap map_container justify-content-between p-5'>
+      <div className='col-lg-11 col-xl-9 col-11 d-flex flex-wrap map_container justify-content-between p-5'>
         <div className='col-12 col-lg-3 p-0 m-0  align-items-start map_child py-4 d-flex flex-wrap px-5 my-4'>
             <div className='col-lg-12 justify-content-center p-0 d-flex align-items-center col-12 flex-wrap'>
               <Swiper autoplay={{
@@ -81,7 +81,7 @@ const Map = () => {
             </div>
             <div className='col-lg-12 p-0 pt-4 pt-lg-3 '>
                 <p className='desc_map'>
-              7777 NFTs will be sold and Pudgy friends NFT staking will be launched. More actions TBA,..
+              7777 NFTs will be sold and Pudgy friends NFT staking will be launched. More actions TB...
                 </p>
             </div>
         </div>

@@ -44,10 +44,10 @@
     letter-spacing: 4px;
 }
 .text_22{
-    font-size: 85px;
+    font-size: 70px;
     font-weight: 800;
     p {
-        font-size: 85px;
+        font-size: 70px;
         font-weight: 800;
         color: #00eaff;
     }
@@ -63,13 +63,14 @@
         font-size: 40px;
         }
     }
+    
 }
 .text_33 {
     font-size: 17px;
 }
 .text_nft_number{
     position: absolute;
-    right: 40px;
+    right: 30px;
     top: 30%;
     transform: translate(-50%);
     h1 {
@@ -98,8 +99,8 @@
     }
 }
 .image_fixed_size{
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
 }
 .list_container{
     font-size: 18px ;
@@ -222,9 +223,20 @@
     display: flex;
     justify-content: flex-start;
     overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    height: 65px;
   }
   .section span {
-    display: block;
-    transform: translateX(-50px);
-    font-size: 60px ; 
+    position: absolute;
+    white-space: nowrap;
+    font-size: 40px ; 
+    color: #000;
+    animation: myanim 5s infinite  ease-out;
+    overflow: hidden;
   }
+
+  
+@keyframes myanim{
+    0%{left:-15%; overflow: hidden;}
+    100%{left:110%; visibility: hidden;overflow: hidden;}
+}

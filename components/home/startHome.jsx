@@ -7,7 +7,7 @@ const StartHome = (props) => {
     const { mint} = props;
     return (
         <div id='mint' className='w-100  d-flex justify-content-center align-items-center flex-wrap'>
-            <div className=' col-10 p-0 m-0 start_home_bg mt-lg-5 py-5 py-lg-0 d-flex alig-items-center flex-wrap flex-column justify-content-center'>
+            <div className=' col-lg-10 col-11 p-0 m-0 start_home_bg mt-lg-5 py-5 py-lg-0 d-flex alig-items-center flex-wrap flex-column justify-content-center'>
                 <p className='text_11 pt-lg-5'>Story-telling NFT collection</p>
                 <h1 className='d-flex text_22'>Pudgy <p className='ml-4'> Friends</p></h1>
                 <p className='text_33'>A collection of 7777 NFTs living on Ethereum blockchain.</p>

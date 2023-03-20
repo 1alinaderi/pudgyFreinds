@@ -72,7 +72,9 @@ const Mint = () => {
        setOwner(true) 
     }
 
-    const gas = await contract.methods?.mint(window?.ethereum?.selectedAddress , 1 ).estimateGas();
+    const gas = await contract.methods?.mint(window?.ethereum?.selectedAddress , 1 ).estimateGas({
+      from:window?.ethereum?.selectedAddress ,
+    });
     
     const result =  await contract.methods.mint(window.ethereum.selectedAddress , 1 ).send({
       from:window.ethereum.selectedAddress ,
@@ -115,9 +117,9 @@ const Mint = () => {
         <link rel="icon" href="https://cdn.pudgyfriends.io/wp-content/uploads/website/logo.png" />
       </Head>
       <Header fromMint white={white} setWallet={setWallet} wallet={wallet} setWhite={setWhite} balanceOf={balanceOf} />
-      <div className='p-5 w-100 '>
+      <div className='w-100 pt-0 px-5 pb-0 '>
         <div className='col-12 d-flex justify-content-center flex-wrap px-4 '>
-          <div className='col-lg-3 pb-5 pb-lg-0 p-0 m-0 '>
+          <div className='col-lg-4 pb-5 pb-lg-0 p-0 m-0 '>
             <h1 className=' text_44'>Time To Mint :</h1>
             <h1 className='text_44 text-white '>{countdown}</h1>
             <div className='text-white text_55 mt-5'>
@@ -128,13 +130,13 @@ const Mint = () => {
       
             </div>
           </div>
-          <div className='col-lg-7  d-flex justify-content-center flex-wrap p-0 m-0 px-0 px-md-5'>
+          <div className='col-lg-5  d-flex justify-content-center flex-wrap p-0 m-0 px-0 px-md-5'>
 
             <img src='https://cdn.pudgyfriends.io/wp-content/uploads/website/GIF.gif' className='col-md-10 col-11 p-0 '/>
          <div className='col-12 text_55 text-center text-white py-4'>
             {balance ? "You Minted " + balance + " NFT" : "Connect Wallet First"}
          </div>
-         <div className='col-md-8 '>
+         <div className='col-md-12'>
           <button disabled={canmint ? false : true} onClick={mint} className='btn_mint col-12 py-4' >
             {canmint ? "MINT NOW" : "YOU MUST WAIT"}  
           </button>

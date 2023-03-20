@@ -18,7 +18,7 @@ const HomeCustomerWeb = (props) => {
   const {wallet , setWallet } = props
 
   return (
-    <div className='col-12 p-0 m-0'>
+    <div style={{overflow:"hidden"}} className='col-12 p-0 m-0'>
       <StartHome/>
       <About/>
       <Map/>
@@ -26,17 +26,10 @@ const HomeCustomerWeb = (props) => {
       <OurTeam/>
       <FAQ/>
       <div className='section' ref={ref}>
-      <span
-        style={{
-          transform: isInView ? "translateX(130vw )" : "translateX(-50vw )",
-          transition: "all 10s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
-        }}
-      >
+      <span>
         PUDGY FREINDS
       </span>
     </div>
-
-      
     </div>
   )
 }
